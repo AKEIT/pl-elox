@@ -1,0 +1,1 @@
+grant execute on elox_exceptions to public;

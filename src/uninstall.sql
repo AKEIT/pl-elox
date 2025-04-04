@@ -1,0 +1,12 @@
+drop package if exists elox;
+drop package if exists eloxfactory;
+drop package if exists elox_exceptions;
+drop package if exists elox_types;
+drop package if exists ut_error_collector;
+drop type if exists ot_error_collector;
+drop type if exists ot_bulk_error_detection_strategy;
+drop type if exists ot_bulk_errors_detection_strategy;
+drop type if exists ot_dml_error_log_detection_strategy;
+drop type if exists ot_error_detection_strategy;
+drop type if exists ct_errors;
+drop type if exists ot_error;
