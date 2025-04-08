@@ -34,38 +34,6 @@ create or replace type body ot_error_collector as
                                          reference_id    => reference_id));
     end add_error;
 
-    member procedure add_bulk_error(exception_index in pls_integer,
-                                    context         in varchar2 default null,
-                                    reference_id    in varchar2 default null,
-                                    custom_message  in varchar2 default null) 
-    as
-    begin 
-        self.capture_errors_by(strategy =>  ot_bulk_error_detection_strategy(exception_index   => exception_index,
-                                                                             context           => context, 
-                                                                             reference_id      => reference_id,
-                                                                             custom_message    => custom_message));
-    end add_bulk_error;
-
-    member procedure add_bulk_errors(context         in varchar2 default null) 
-    as
-    begin 
-        self.capture_errors_by(strategy =>  ot_bulk_errors_detection_strategy(context           => context));
-    end add_bulk_errors;
-
-    member procedure add_dml_error_logs(log_table_name      in varchar2,
-                                        error_tag           in varchar2,
-                                        reference_id_column in varchar2,
-                                        context             in varchar2 default null,
-                                        log_table_owner     in varchar2 default null)
-    as  
-    begin 
-        self.capture_errors_by(strategy =>  ot_dml_error_log_detection_strategy(log_table_name      => log_table_name,
-                                                                                error_tag           => error_tag,
-                                                                                reference_id_column => reference_id_column,
-                                                                                context             => context,
-                                                                                log_table_owner     => log_table_owner));
-    end add_dml_error_logs;
-
     member procedure add_errors(errors in ct_errors) is
     begin
         <<iterate_errors>>
