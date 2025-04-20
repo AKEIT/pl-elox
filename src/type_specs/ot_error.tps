@@ -7,6 +7,9 @@ create or replace type ot_error authid current_user as object (
   reference_id  varchar2( 256 char),
   time_stamp    timestamp,
 
+  member function to_json return json_object_t,
+  member function to_string return clob,
+
   constructor function ot_error(code          number,
                                 message       varchar2,
                                 context       varchar2  default null,

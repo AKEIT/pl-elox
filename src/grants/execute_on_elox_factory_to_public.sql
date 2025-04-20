@@ -1,1 +1,0 @@
-grant execute on elox_factory to public;

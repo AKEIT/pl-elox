@@ -30,7 +30,7 @@ create or replace type body ot_dml_error_log_detection_strategy as
             self.errors.extend();
             self.errors(self.errors.count) := ot_error( code            =>r_error_log.code,
                                                         message         =>r_error_log.message,
-                                                        context         =>context,
+                                                        context         => nvl(context, error_tag),
                                                         reference_id    =>r_error_log.reference_id,
                                                         error_stack     => DBMS_UTILITY.FORMAT_ERROR_BACKTRACE , -- todo: add error stack detection
                                                         call_stack      => DBMS_UTILITY.FORMAT_CALL_STACK, -- todo: add call stack detection
