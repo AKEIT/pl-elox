@@ -21,10 +21,14 @@ whenever oserror exit failure rollback;
 @@package_specs/elox_types.pks
 @@package_specs/elox_exceptions.pks
 @@package_specs/elox.pks
+@@package_specs/elox_apex.pks
 @@package_specs/ut_error_collector.pks
 
 @@package_bodies/elox.pkb
+@@package_bodies/elox_apex.pkb
 @@package_bodies/ut_error_collector.pkb
+
+@@views/elox_apex_collections.sql
 
 --todo: check if user wants to grant to publci
 @@grants/execute_on_elox_exceptions_to_public.sql

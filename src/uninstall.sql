@@ -1,7 +1,9 @@
 drop package if exists elox;
 drop package if exists elox_exceptions;
+drop package if exists elox_apex;
 drop package if exists elox_types;
 drop package if exists ut_error_collector;
+drop view if exists elox_apex_collections;
 drop type if exists ot_error_collector;
 drop type if exists ot_bulk_error_detection_strategy;
 drop type if exists ot_bulk_errors_detection_strategy;
